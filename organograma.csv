@@ -1,0 +1,75 @@
+27.0.0.0.0.0.0,Secretaria de Estado de Saúde,SESAU
+27.1.0.0.0.0.0,Secretaria de Estado de Saúde,SESAU
+27.2.0.0.0.0.0,Gabinete,GABIN
+27.3.0.0.0.0.0,Gerência de Licitação,GELIC
+27.4.0.0.0.0.0,Assessoria de Governança,ASSGOV
+27.5.0.0.0.0.0,Assessoria Especial,ASSESP
+27.6.0.0.0.0.0,Assessoria de Comunicação,ASSCOM
+27.7.0.0.0.0.0,Secretaria Executiva de Gestão Interna,SECEGIN
+27.7.1.0.0.0.0,Secretaria Executiva de Gestão Interna,SECEGIN
+27.7.2.0.0.0.0,Assessoria Executiva de Transparência,ASSET
+27.7.3.0.0.0.0,Superintendência Administrativa,SUPAD
+27.7.3.1.0.0.0,Superintendência Administrativa,SUPAD
+27.7.3.2.0.0.0,Gerência Administrativa,GERAD
+27.7.3.3.0.0.0,Gerência de Suprimentos,GSUPR
+27.7.3.4.0.0.0,Gerência de Serviços Gerais,GSERV
+27.7.3.5.0.0.0,Gerência de Engenharia Clínica,GENCLI
+27.7.4.0.0.0.0,"Superintendência de Planejamento, Orçamento, Finanças e Contabilidade",SEPOFC
+27.7.4.1.0.0.0,"Superintendência de Planejamento, Orçamento, Finanças e Contabilidade",SEPOFC
+27.7.4.2.0.0.0,Gerência de Planejamento e Orçamento,GERPLOR
+27.7.4.3.0.0.0,Gerência de Finanças,GEFIN
+27.7.4.4.0.0.0,Gerência de Contabilidade,GECON
+27.7.5.0.0.0.0,Gerência Executiva de Tecnologia da Informação,GETIN
+27.7.6.0.0.0.0,"Superintendência de Planejamento, Gestão e Participação Social",SUPAG
+27.7.6.1.0.0.0,"Superintendência de Planejamento, Gestão e Participação Social",SUPAG
+27.7.6.2.0.0.0,"Gerência de Planejamento, Monitoramento e Avaliação",GEPLAN
+27.7.6.3.0.0.0,Gerência de Gestão Regional e Participação Social,GERPS
+27.7.6.4.0.0.0,Gerência do Fundo Estadual de Saúde,FES
+27.7.7.0.0.0.0,Superintendência de Valorização de Pessoas,SUVAP
+27.7.7.1.0.0.0,Superintendência de Valorização de Pessoas,SUVAP
+27.7.7.2.0.0.0,Gerência da Força de Trabalho,GEFT
+27.7.7.3.0.0.0,"Gerência de Desenvolvimento, Educação e Saúde",GEDES
+27.7.7.4.0.0.0,Gerência do Núcleo de Atenção à Saúde do Trabalhador,GENAST
+27.8.0.0.0.0.0,Secretaria Executiva de Ações de Saúde,SEAS
+27.8.1.0.0.0.0,Secretaria Executiva de Ações de Saúde,SEAS
+27.8.2.0.0.0.0,"Superintendência de Auditoria, Controle e Avaliação",SUACA
+27.8.2.1.0.0.0,"Superintendência de Auditoria, Controle e Avaliação",SUACA
+27.8.2.2.0.0.0,Gerência de Auditoria,GEAUDIT
+27.8.2.3.0.0.0,Gerência de Controle e Avaliação,GECAV
+27.8.3.0.0.0.0,Superintendência de Atenção Especializada Ambulatorial e Hospitalar,SUAEAH
+27.8.3.1.0.0.0,Superintendência de Atenção Especializada Ambulatorial e Hospitalar,SUAEAH
+27.8.3.2.0.0.0,Gerência de Assistência Pré-Hospitalar,GEAPREH
+27.8.3.3.0.0.0,Gerência de Assistência Hospitalar,GEAH
+27.8.3.3.1.0.0,Gerência de Assistência Hospitalar,GEAH
+27.8.3.3.2.0.0,Hospital Metropolitano de Alagoas (HMA),HMA
+27.8.3.3.3.0.0,Hospital Regional do Norte (HRN),HRN
+27.8.3.3.4.0.0,Hospital Regional da Mata (HRM),HRM
+27.8.3.3.5.0.0,Hospital Antenor Serpa (HAS),HAS
+27.8.3.4.0.0.0,Diretoria Geral da Hemorrede,DGHE
+27.8.3.5.0.0.0,Gerência Técnica de Assistência Farmacêutica,GETAF
+27.8.3.4.0.0.0,Superintendência de Ações e Projetos,SUAP
+27.8.3.4.1.0.0,Superintendência de Ações e Projetos,SUAP
+27.8.3.4.2.0.0,Gerência de Atenção Primária,GEAP
+27.8.3.4.3.0.0,Gerência de Ações Estratégicas,GEAE
+27.9.0.0.0.0.0,Secretaria Executiva de Regulação e Gestão,SERG
+27.9.1.0.0.0.0,Secretaria Executiva de Regulação e Gestão,SERG
+27.9.2.0.0.0.0,Superintendência de Regulação,SURG
+27.9.2.1.0.0.0,Superintendência de Regulação,SURG
+27.9.2.2.0.0.0,Gerência de Regulação,GERG
+27.9.2.0.0.0.0,Superintendência de Estratégias Hospitalares,SUEH
+27.9.2.1.0.0.0,Superintendência de Estratégias Hospitalares,SUEH
+27.9.1.2.0.0.0,Gerência de Estratégias Hospitalares,GEREH
+27.9.1.3.0.0.0,Gerência Operativa da RAV (Rede de Atenção às Violências),RAV
+27.10.0.0.0.0.0,Secretaria Executiva de Vigilância em Saúde,SEVS
+27.10.1.0.0.0.0,Secretaria Executiva de Vigilância em Saúde,SEVS
+27.10.2.0.0.0.0,Superintendência de Vigilância e Controle de Doenças,SUVCD
+27.10.2.1.0.0.0,Superintendência de Vigilância e Controle de Doenças,SUVCD
+27.10.2.2.0.0.0,Supervisão do Centro de Referência em Saúde do Trabalhador,SUCREST
+27.10.2.3.0.0.0,Gerência de Vigilância e Controle de Doenças Transmissíveis,GEVIDT
+27.10.2.4.0.0.0,Gerência de Vigilância e Controle de Doenças Não Transmissíveis,GEVIDNT
+27.10.3.0.0.0.0,Superintendência de Vigilância Ambiental e Sanitária,SUVSA
+27.10.3.1.0.0.0,Superintendência de Vigilância Ambiental e Sanitária,SUVSA
+27.10.3.2.0.0.0,Gerência de Vigilância em Saúde Ambiental,GEVSA
+27.10.3.3.0.0.0,Gerência de Vigilância Sanitária,GEVIS
+27.10.3.4.0.0.0,Gerência do Laboratório Central de Saúde Pública,LACEN
+27.10.3.5.0.0.0,Gerência de Informação e Análise da Situação da Saúde,GIANS

@@ -1,0 +1,41 @@
+package custos.integracao.memoria;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import custos.negocio.modelo.FatorProduto;
+
+public class FatorProdutoDao {
+	private static List<FatorProduto> fatores = new ArrayList<>();
+
+	public String inserir(FatorProduto fator) {
+		fatores.add(fator);
+		String id = fator.getId();
+		if (null == id) {
+			id = String.valueOf(fatores.size() - 1);
+			fator.setId(id);
+		}
+		return id;
+	}
+
+	public List<FatorProduto> listar() {
+		return fatores;
+	}
+
+	public void excluir(String id) {
+		FatorProduto aRemover = null;
+		for (FatorProduto fator : fatores) {
+			if (id.equals(fator.getId())) {
+				aRemover = fator;
+				break;
+			}
+		}
+		fatores.remove(aRemover);
+	}
+
+	public void alterar(FatorProduto fator) {
+		String id = fator.getId();
+		fatores.remove(Integer.parseInt(id));
+		fatores.add(Integer.parseInt(id), fator);
+	}
+}
