@@ -23,7 +23,7 @@ public class MenuProduto extends Console implements Comando {
 
 	@Override
 	public Tela executar() {
-		printf("Objeto");
+		printf("Produto");
 		menus.stream().forEach(m -> print(m.getId() + " - " + m.getTitulo()));
 		print("Selecione uma das opções acima:");
 		return new Tela("");

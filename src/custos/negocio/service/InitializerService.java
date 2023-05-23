@@ -22,6 +22,7 @@ import custos.integracao.memoria.FatorProdutoDao;
 import custos.integracao.memoria.InsumoDao;
 import custos.integracao.memoria.ProdutoDao;
 import custos.integracao.memoria.VPDDao;
+import custos.integracao.memoria.estrutura.Orgao;
 import custos.negocio.Model;
 import custos.negocio.modelo.Aspecto;
 import custos.negocio.modelo.Atividade;
@@ -114,6 +115,7 @@ public class InitializerService {
 		all.stream().forEach(c->{
 			centroDao.inserir((Centro)c);
 		});
+		Orgao organograma = centroDao.getOrganograma();
 	}
 	
 }

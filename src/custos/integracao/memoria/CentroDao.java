@@ -16,11 +16,11 @@ public class CentroDao {
 		if (null == id) {
 			id = String.valueOf(centros.size() - 1);
 			centro.setId(id);
-			if(null == organograma) {
-				organograma = new Orgao(centro);
-			} else {
-				organograma.insere(centro);
-			}
+		}
+		if(null == organograma) {
+			organograma = new Orgao(centro);
+		} else {
+			organograma.insere(centro, 0);
 		}
 		return id;
 	}
@@ -45,4 +45,21 @@ public class CentroDao {
 		centros.remove(Integer.parseInt(id));
 		centros.add(Integer.parseInt(id), centro);
 	}
+
+	public static List<Centro> getCentros() {
+		return centros;
+	}
+
+	public static void setCentros(List<Centro> centros) {
+		CentroDao.centros = centros;
+	}
+
+	public static Orgao getOrganograma() {
+		return organograma;
+	}
+	
+	public static void setOrganograma(Orgao organograma) {
+		CentroDao.organograma = organograma;
+	}
+	
 }

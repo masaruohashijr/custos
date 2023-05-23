@@ -22,7 +22,7 @@ public class ListarProduto extends Console implements Comando {
 
 	@Override
 	public Tela executar() {
-		printf("Listar Objeto");
+		printf("Listar Produto");
 		Tela tela = new Tela("");
 		List<Produto> insumos = dao.listar();
 		insumos.stream().forEach(v -> tela.escrever(v.getId() + " - " + v.getNome()));

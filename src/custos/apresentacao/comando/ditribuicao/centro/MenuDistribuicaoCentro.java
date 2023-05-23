@@ -18,6 +18,7 @@ public class MenuDistribuicaoCentro extends Console implements Comando {
 		menus.add(new Menu(262, "Incluir"));
 		menus.add(new Menu(263, "Alterar"));
 		menus.add(new Menu(264, "Excluir"));
+		menus.add(new Menu(265, "Consolidar ORGANOGRAMA"));
 		menus.add(new Menu(9, "PARA VOLTAR"));
 	}
 

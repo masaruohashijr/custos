@@ -35,6 +35,7 @@ import custos.apresentacao.comando.ditribuicao.atividade.IncluirDistribuicaoAtiv
 import custos.apresentacao.comando.ditribuicao.atividade.ListarDistribuicaoAtividade;
 import custos.apresentacao.comando.ditribuicao.atividade.MenuDistribuicaoAtividade;
 import custos.apresentacao.comando.ditribuicao.centro.AlterarDistribuicaoCentro;
+import custos.apresentacao.comando.ditribuicao.centro.ConsolidarDistribuicaoCentro;
 import custos.apresentacao.comando.ditribuicao.centro.ExcluirDistribuicaoCentro;
 import custos.apresentacao.comando.ditribuicao.centro.IncluirDistribuicaoCentro;
 import custos.apresentacao.comando.ditribuicao.centro.ListarDistribuicaoCentro;
@@ -120,6 +121,7 @@ public class Controlador {
 		comandos.add(new IncluirDistribuicaoCentro("262"));
 		comandos.add(new AlterarDistribuicaoCentro("263"));
 		comandos.add(new ExcluirDistribuicaoCentro("264"));
+		comandos.add(new ConsolidarDistribuicaoCentro("265"));
 	}
 
 	public Tela processar(String opcao) {
