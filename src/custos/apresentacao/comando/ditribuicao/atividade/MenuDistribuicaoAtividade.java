@@ -14,16 +14,16 @@ public class MenuDistribuicaoAtividade extends Console implements Comando {
 	private List<Menu> menus = new ArrayList<>();
 	public MenuDistribuicaoAtividade(String id) {
 		this.id = id;
-		menus.add(new Menu(231, "Listar"));
-		menus.add(new Menu(232, "Incluir"));
-		menus.add(new Menu(233, "Alterar"));
-		menus.add(new Menu(234, "Excluir"));
+		menus.add(new Menu(221, "Listar"));
+		menus.add(new Menu(222, "Incluir"));
+		menus.add(new Menu(223, "Alterar"));
+		menus.add(new Menu(224, "Excluir"));
 		menus.add(new Menu(9, "PARA VOLTAR"));
 	}
 
 	@Override
 	public Tela executar() {
-		printf("Distribuir Insumos em Atividades");
+		printf("Distribuir VPDs em Atividades");
 		menus.stream().forEach(m -> print(m.getId() + " - " + m.getTitulo()));
 		print("Selecione uma das opções acima:");
 		return new Tela("");

@@ -13,8 +13,9 @@ public class MenuPrincipal implements Comando {
 	public MenuPrincipal(String id) {
 		this.id = id;
 		menus.add(new Menu(1, "Cadastro"));
-		menus.add(new Menu(2, "Apuração"));
-		menus.add(new Menu(3, "Demonstração"));
+		menus.add(new Menu(2, "Configuração"));
+		menus.add(new Menu(3, "Apropriação"));
+		menus.add(new Menu(4, "Demonstração"));
 		menus.add(new Menu(0, "PARA SAIR"));
 	}
 

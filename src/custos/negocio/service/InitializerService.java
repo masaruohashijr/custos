@@ -5,6 +5,7 @@ import java.util.List;
 import custos.integracao.csv.AspectoCSVDao;
 import custos.integracao.csv.AtividadeCSVDao;
 import custos.integracao.csv.CentroCSVDao;
+import custos.integracao.csv.FatoCSVDao;
 import custos.integracao.csv.FatorAspectoCSVDao;
 import custos.integracao.csv.FatorAtividadeCSVDao;
 import custos.integracao.csv.FatorCentroCSVDao;
@@ -15,6 +16,7 @@ import custos.integracao.csv.VPDCSVDao;
 import custos.integracao.memoria.AspectoDao;
 import custos.integracao.memoria.AtividadeDao;
 import custos.integracao.memoria.CentroDao;
+import custos.integracao.memoria.FatoDao;
 import custos.integracao.memoria.FatorAspectoDao;
 import custos.integracao.memoria.FatorAtividadeDao;
 import custos.integracao.memoria.FatorCentroDao;
@@ -27,6 +29,7 @@ import custos.negocio.Model;
 import custos.negocio.modelo.Aspecto;
 import custos.negocio.modelo.Atividade;
 import custos.negocio.modelo.Centro;
+import custos.negocio.modelo.Fato;
 import custos.negocio.modelo.FatorAspecto;
 import custos.negocio.modelo.FatorAtividade;
 import custos.negocio.modelo.FatorCentro;
@@ -66,6 +69,14 @@ public class InitializerService {
 		FatorCentroDao fatorCentroDao = new FatorCentroDao();
 		all.stream().forEach(a->{
 			fatorCentroDao.inserir((FatorCentro)a);
+		});		
+	}
+	
+	public static void loadFato() {
+		List<Model> all = new FatoCSVDao().getAllFromCSV("fatos.csv");
+		FatoDao fatoDao = new FatoDao();
+		all.stream().forEach(a->{
+			fatoDao.inserir((Fato)a);
 		});		
 	}
 	

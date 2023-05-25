@@ -9,7 +9,7 @@ public class FatorAtividadeCSVDao extends CSVDao{
 	protected Model build(String[] array) {
 		String[] partes = array[0].split("-");
 		Double fator = Double.valueOf(partes[2]);
-		Model fatorAtividade = new FatorAtividade(partes[0], partes[1], fator);
+		Model fatorAtividade = new FatorAtividade(partes[0].trim(), partes[1].trim(), fator);
 		return fatorAtividade;
 	}
 }

@@ -4,19 +4,19 @@ import custos.negocio.Model;
 
 public class FatorAtividade extends Model{
 	private String id;
-	private String idInsumo;
+	private String idVPD;
 	private String idAtividade;
 	private Double fator;
 
-	public FatorAtividade(String idInsumo, String idAtividade, Double fator) {
-		this.idInsumo = idInsumo;
+	public FatorAtividade(String idVPD, String idAtividade, Double fator) {
+		this.idVPD = idVPD;
 		this.idAtividade = idAtividade;
 		this.fator = fator;
 	}
 
-	public FatorAtividade(String id, String idInsumo, String idAtividade, Double fator) {
+	public FatorAtividade(String id, String idVPD, String idAtividade, Double fator) {
 		this.id = id;
-		this.idInsumo = idInsumo;
+		this.idVPD = idVPD;
 		this.idAtividade = idAtividade;
 		this.fator = fator;
 	}
@@ -37,12 +37,12 @@ public class FatorAtividade extends Model{
 		this.idAtividade = idAtividade;
 	}
 
-	public String getIdInsumo() {
-		return idInsumo;
+	public String getIdVPD() {
+		return idVPD;
 	}
 
-	public void setIdInsumo(String idInsumo) {
-		this.idInsumo = idInsumo;
+	public void setIdVPD(String idVPD) {
+		this.idVPD = idVPD;
 	}
 
 	public Double getFator() {
@@ -55,6 +55,6 @@ public class FatorAtividade extends Model{
 
 	@Override
 	public String toString() {
-		return id + " - " + idInsumo + " - " + idAtividade + " - " + fator;
+		return id + " - " + idVPD + " - " + idAtividade + " - " + fator;
 	}	
 }

@@ -23,15 +23,15 @@ public class AlterarDistribuicaoAtividade extends Console implements Comando {
 
 	@Override
 	public Tela executar() {
-		printf("Alterar Distribuição de Insumo por Atividade");
+		printf("Alterar Distribuição de VPD por Atividade");
 		Tela tela = new Tela("");
-		print("Informe o ID, o ID do Insumo, o ID da Atividade e o valor separados por (;):");
+		print("Informe o ID, o ID do VPD, o ID da Atividade e o valor separados por (;):");
 		Scanner scanner = new Scanner(System.in);
 		String dado = scanner.nextLine();
 		FatorAtividade atividade = build(dado);
 		dao.alterar(atividade);
 		tela.escrever("-----");
-		tela.escrever("Distribuição de Insumos por Atividades alterada com SUCESSO!");
+		tela.escrever("Distribuição de VPDs por Atividades alterada com SUCESSO!");
 		tela.escrever("-----");
 		tela.escrever(String.valueOf(atividade));
 		tela.escrever("-----");

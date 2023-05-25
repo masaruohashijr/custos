@@ -30,6 +30,7 @@ public class CustosMain extends Console {
 		InitializerService.loadFatorProduto();
 		InitializerService.loadFatorAspecto();
 		InitializerService.loadFatorCentro();
+		InitializerService.loadFato();
 	}
 
 	private void run() {

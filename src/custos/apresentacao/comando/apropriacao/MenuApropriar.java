@@ -1,4 +1,4 @@
-package custos.apresentacao.comando.ditribuicao.produto;
+package custos.apresentacao.comando.apropriacao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,22 +8,19 @@ import custos.apresentacao.Tela;
 import custos.apresentacao.comando.Comando;
 import custos.apresentacao.comando.Menu;
 
-public class MenuDistribuicaoProduto extends Console implements Comando {
+public class MenuApropriar extends Console implements Comando {
 	
 	private String id;
 	private List<Menu> menus = new ArrayList<>();
-	public MenuDistribuicaoProduto(String id) {
+	public MenuApropriar(String id) {
 		this.id = id;
-		menus.add(new Menu(231, "Listar"));
-		menus.add(new Menu(232, "Incluir"));
-		menus.add(new Menu(233, "Alterar"));
-		menus.add(new Menu(234, "Excluir"));
+		menus.add(new Menu(321, "Apropriar"));
 		menus.add(new Menu(9, "PARA VOLTAR"));
 	}
 
 	@Override
 	public Tela executar() {
-		printf("Distribuir Atividades em Produtos");
+		printf("Fato");
 		menus.stream().forEach(m -> print(m.getId() + " - " + m.getTitulo()));
 		print("Selecione uma das opções acima:");
 		return new Tela("");

@@ -14,10 +14,10 @@ public class MenuDistribuicaoAspecto extends Console implements Comando {
 	private List<Menu> menus = new ArrayList<>();
 	public MenuDistribuicaoAspecto(String id) {
 		this.id = id;
-		menus.add(new Menu(251, "Listar"));
-		menus.add(new Menu(252, "Incluir"));
-		menus.add(new Menu(253, "Alterar"));
-		menus.add(new Menu(254, "Excluir"));
+		menus.add(new Menu(241, "Listar"));
+		menus.add(new Menu(242, "Incluir"));
+		menus.add(new Menu(243, "Alterar"));
+		menus.add(new Menu(244, "Excluir"));
 		menus.add(new Menu(9, "PARA VOLTAR"));
 	}
 

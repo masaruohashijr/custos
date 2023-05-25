@@ -23,15 +23,15 @@ public class IncluirDistribuicaoAtividade extends Console implements Comando {
 
 	@Override
 	public Tela executar() {
-		printf("Incluir Distribuição de Insumo por Atividade");
+		printf("Incluir Distribuição de VPD por Atividade");
 		Tela tela = new Tela("");
-		print("Informe o ID do Insumo, o ID da Atividade e o valor separados por (;):");
+		print("Informe o ID do VPD, o ID da Atividade e o valor separados por (;):");
 		Scanner scanner = new Scanner(System.in);
 		String dado = scanner.nextLine();
 		FatorAtividade fator = build(dado);
 		String id = dao.inserir(fator);
 		tela.escrever("-----");
-		tela.escrever("Distribuição de Insumos por Atividades incluída com SUCESSO!");
+		tela.escrever("Distribuição de VPDs por Atividades incluída com SUCESSO!");
 		tela.escrever("-----");
 		tela.escrever(String.valueOf(fator));
 		tela.escrever("-----");

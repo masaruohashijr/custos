@@ -14,11 +14,11 @@ public class MenuDistribuicaoCentro extends Console implements Comando {
 	private List<Menu> menus = new ArrayList<>();
 	public MenuDistribuicaoCentro(String id) {
 		this.id = id;
-		menus.add(new Menu(261, "Listar"));
-		menus.add(new Menu(262, "Incluir"));
-		menus.add(new Menu(263, "Alterar"));
-		menus.add(new Menu(264, "Excluir"));
-		menus.add(new Menu(265, "Consolidar ORGANOGRAMA"));
+		menus.add(new Menu(251, "Listar"));
+		menus.add(new Menu(252, "Incluir"));
+		menus.add(new Menu(253, "Alterar"));
+		menus.add(new Menu(254, "Excluir"));
+		menus.add(new Menu(255, "Consolidar ORGANOGRAMA"));
 		menus.add(new Menu(9, "PARA VOLTAR"));
 	}
 
