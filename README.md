@@ -33,17 +33,17 @@ Custo: R$ 7.142,26
 Id Atividade:2
 Nome Atividade:Exames Laboratoriais
 Fator Atividade: 300.0
-Custo: R$ 2.142,68
+Custo: R$ 21.426,77
 -----
 Id Atividade:3
 Nome Atividade:Procedimentos Cirúrgicos
 Fator Atividade: 200.0
-Custo: R$ 428,54
+Custo: R$ 14.284,51
 -----
 Id Atividade:4
 Nome Atividade:Internações
 Fator Atividade: 400.0
-Custo: R$ 171,41
+Custo: R$ 28.569,03
 *** SEGUNDA PARTE ***
 *** DIRECIONAMENTO DAS ATIVIDADES ***
 -----
@@ -62,9 +62,9 @@ A soma dos pesos dá 40.0.
 ***  ***
 *** TERCEIRA PARTE ***
 *** CONSOLIDAÇÃO DOS CUSTOS NO ORGANOGRAMA ***
-Custo: R$ 160,70
-Custo: R$ 267,83
-27.0.0.0.0.0.0,Secretaria de Estado de Saúde,SESAU - R$ 428,54
+Custo: R$ 5.356,69
+Custo: R$ 8.927,82
+27.0.0.0.0.0.0,Secretaria de Estado de Saúde,SESAU - R$ 14.284,51
 27.1.0.0.0.0.0,Secretaria de Estado de Saúde,SESAU - R$ 0,00
 27.2.0.0.0.0.0,Gabinete,GABIN - R$ 0,00
 27.3.0.0.0.0.0,Gerência de Licitação,GELIC - R$ 0,00
@@ -96,20 +96,20 @@ Custo: R$ 267,83
 27.7.7.2.0.0.0,Gerência da Força de Trabalho,GEFT - R$ 0,00
 27.7.7.3.0.0.0,"Gerência de Desenvolvimento, Educação e Saúde" - R$ 0,00
 27.7.7.4.0.0.0,Gerência do Núcleo de Atenção à Saúde do Trabalhador,GENAST - R$ 0,00
-27.8.0.0.0.0.0,Secretaria Executiva de Ações de Saúde,SEAS - R$ 428,54
+27.8.0.0.0.0.0,Secretaria Executiva de Ações de Saúde,SEAS - R$ 14.284,51
 27.8.1.0.0.0.0,Secretaria Executiva de Ações de Saúde,SEAS - R$ 0,00
 27.8.2.0.0.0.0,"Superintendência de Auditoria, Controle e Avaliação" - R$ 0,00
 27.8.2.1.0.0.0,"Superintendência de Auditoria, Controle e Avaliação" - R$ 0,00
 27.8.2.2.0.0.0,Gerência de Auditoria,GEAUDIT - R$ 0,00
 27.8.2.3.0.0.0,Gerência de Controle e Avaliação,GECAV - R$ 0,00
-27.8.3.0.0.0.0,Superintendência de Atenção Especializada Ambulatorial e Hospitalar,SUAEAH - R$ 428,54
+27.8.3.0.0.0.0,Superintendência de Atenção Especializada Ambulatorial e Hospitalar,SUAEAH - R$ 14.284,51
 27.8.3.1.0.0.0,Superintendência de Atenção Especializada Ambulatorial e Hospitalar,SUAEAH - R$ 0,00
 27.8.3.2.0.0.0,Gerência de Assistência Pré-Hospitalar,GEAPREH - R$ 0,00
-27.8.3.3.0.0.0,Gerência de Assistência Hospitalar,GEAH - R$ 428,54
+27.8.3.3.0.0.0,Gerência de Assistência Hospitalar,GEAH - R$ 14.284,51
 27.8.3.3.1.0.0,Gerência de Assistência Hospitalar,GEAH - R$ 0,00
-27.8.3.3.2.0.0,Hospital Metropolitano de Alagoas (HMA),HMA - R$ 267,83
+27.8.3.3.2.0.0,Hospital Metropolitano de Alagoas (HMA),HMA - R$ 8.927,82
 27.8.3.3.3.0.0,Hospital Regional do Norte (HRN),HRN - R$ 0,00
-27.8.3.3.4.0.0,Hospital Regional da Mata (HRM),HRM - R$ 160,70
+27.8.3.3.4.0.0,Hospital Regional da Mata (HRM),HRM - R$ 5.356,69
 27.8.3.3.5.0.0,Hospital Antenor Serpa (HAS),HAS - R$ 0,00
 27.8.3.4.0.0.0,Diretoria Geral da Hemorrede,DGHE - R$ 0,00
 27.8.3.5.0.0.0,Gerência Técnica de Assistência Farmacêutica,GETAF - R$ 0,00
