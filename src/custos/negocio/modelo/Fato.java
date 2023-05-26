@@ -5,7 +5,7 @@ import custos.negocio.Model;
 public class Fato extends Model {
 	private String id;
 	private String vpd;
-	private double valor;
+	private Double valor;
 	
 	public Fato(String vpd, double valor) {
 		this.vpd = vpd;

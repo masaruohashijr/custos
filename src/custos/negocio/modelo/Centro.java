@@ -1,5 +1,7 @@
 package custos.negocio.modelo;
 
+import java.util.Iterator;
+
 import custos.negocio.Model;
 
 public class Centro extends Model{
@@ -44,5 +46,15 @@ public class Centro extends Model{
 	@Override
 	public String toString() {
 		return id + " - " + nome;
+	}
+
+	public Integer getNumeroId() {
+		String[] split = id.split("[.]");
+		String strNumeroId = "";
+		for (int i = 0; i < split.length; i++) {
+			strNumeroId += split[i];
+		}
+		Integer numeroId = Integer.valueOf(strNumeroId);
+		return numeroId;
 	}	
 }

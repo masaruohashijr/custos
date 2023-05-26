@@ -9,6 +9,7 @@ public class Orgao {
 	private Centro centro;
 	private List<Orgao> unidades;
 	private Double fator;
+	private Double custo;
 
 	public Orgao(Centro centro) {
 	        this.centro = centro;
@@ -84,4 +85,13 @@ public class Orgao {
 		}		
 		this.fator += fator;		
 	}
+
+	public Double getCusto() {
+		return custo;
+	}
+
+	public void setCusto(Double custo) {
+		this.custo = custo;
+	}
+	
 }
