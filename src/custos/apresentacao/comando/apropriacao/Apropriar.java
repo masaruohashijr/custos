@@ -1,10 +1,10 @@
 package custos.apresentacao.comando.apropriacao;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 import custos.apresentacao.Console;
 import custos.apresentacao.Tela;
@@ -32,6 +32,7 @@ public class Apropriar extends Console implements Comando {
 	private CentroDao centroDao = new CentroDao();
 	private List<Menu> menus = new ArrayList<>();
 	private TreeMap<Integer, Orgao> mapaOrdenado = new TreeMap<Integer, Orgao>();
+	private NumberFormat formatter = NumberFormat.getCurrencyInstance();
 	
 	public Apropriar(String id) {
 		this.id = id;
@@ -40,72 +41,104 @@ public class Apropriar extends Console implements Comando {
 
 	@Override
 	public Tela executar() {
-		printf("Apropriar Fato");
 		Tela tela = new Tela("");
 		List<Fato> fatos = fatoDao.listar();
-		// O que fazer com essa linha?
-		// 1 - 311110101 - 71422.57
-		// Atividades
 		for (Fato fato : fatos) {
+			printf("Apropriar Fato");
+			print("Id: "+fato.getId());
+			print("VPD: "+fato.getVpd());
+			Double vlr = fato.getValor();
+			String vlrString = formatter.format(vlr);
+			print("Valor: "+vlrString);
 			List<FatorAtividade> fatoresAtividades = fatorAtividadeDao.listar();
 			Double somaDosPesos = 0.0;
 			List<CustoAtividade> custosAtividade = new ArrayList<CustoAtividade>();
-			for (FatorAtividade fator : fatoresAtividades) {
-				if (fator.getIdVPD().equals(fato.getVpd())) {
-					String idAtividade = fator.getIdAtividade();
-					List<Atividade> atividades = atividadeDao.listar();
-					Double peso = fator.getFator();
-					for (Atividade atividade : atividades) {
-						if (idAtividade.equals(atividade.getId())) {
-							CustoAtividade custoAtividade = new CustoAtividade(atividade.getId(), atividade.getNome(), peso);
-							custosAtividade.add(custoAtividade);
-						}
-					}
-					somaDosPesos = somaDosPesos + peso;
-				}
-			}
-			print("----- PRIMEIRA PARTE");
+			somaDosPesos = direcionarCustos(fato, fatoresAtividades, somaDosPesos, custosAtividade);
+			printf("PRIMEIRA PARTE");
+			printf("DIRECIONAMENTO DOS CUSTOS");
 			print("A soma dos pesos dá " + somaDosPesos + ".");
-			print("-----");
 			for (CustoAtividade custoAtividade : custosAtividade) {
+				print("-----");
+				print("Id Atividade:"+custoAtividade.idAtividade);
+				print("Nome Atividade:"+custoAtividade.nomeAtividade);
+				print("Fator Atividade: "+custoAtividade.fator);				
 				Double valor = fato.getValor() * custoAtividade.fator / somaDosPesos;
+				String valorString = formatter.format(valor);
+				print("Custo: "+valorString);				
 				custoAtividade.setValor(valor);
-				/*print(
-						custoAtividade.idAtividade + " - " + custoAtividade.nomeAtividade + " - " + custoAtividade.fator + " - " + custoAtividade.valor);*/
 			}
 			List<FatorCentro> fatoresCentros = fatorCentroDao.listar();
 			List<Centro> centros = centroDao.listar();
 			somaDosPesos = 0.0;
 			List<CustoCentro> custosCentros = new ArrayList<CustoCentro>();
-			for (FatorCentro fatorCentro : fatoresCentros) {
-				Double peso = fatorCentro.getFator();
-				for (Centro centro : centros) {
-					if(fatorCentro.getIdCentro().equals(centro.getId())) {
-						CustoCentro custoCentro = new CustoCentro(fatorCentro.getIdAtividade(), centro.getId(), 
-								centro.getNome(), centro.getAcronimo(), peso);
-						custosCentros.add(custoCentro);
-					}
-				}
-				somaDosPesos = somaDosPesos + peso;
-			}			
-			print("----- SEGUNDA PARTE");
+			printf("SEGUNDA PARTE");
+			printf("DIRECIONAMENTO DAS ATIVIDADES");
+			somaDosPesos = direcionarAtividades(somaDosPesos, fatoresCentros, centros, custosCentros);			
 			print("A soma dos pesos dá " + somaDosPesos + ".");
-			print("-----");
-			for (CustoAtividade custoAtividade : custosAtividade) {
-				String idAtividade = custoAtividade.idAtividade;				
-				for (CustoCentro custoCentro : custosCentros) {
-					if(idAtividade.equals(custoCentro.idAtividade)) {
-						Double valor = custoAtividade.valor * custoCentro.fator / somaDosPesos;
-						custoCentro.setValor(valor);
-						// print(custoCentro.idCentro+","+custoCentro.nomeCentro+","+custoCentro.acronimoCentro+" - "+valor);	
-					}
-				}		
-			}
+			printf("");
+			distribuirCustos(somaDosPesos, custosAtividade, custosCentros);
+			printf("TERCEIRA PARTE");
+			printf("CONSOLIDAÇÃO DOS CUSTOS NO ORGANOGRAMA");
 			consolidacaoOrganograma(custosCentros);
 		}
 		tela.escrever("-----");
 		menus.stream().forEach(m -> tela.escrever(m.getId() + " - " + m.getTitulo()));
 		return tela;
+	}
+
+	private void distribuirCustos(Double somaDosPesos, List<CustoAtividade> custosAtividade,
+			List<CustoCentro> custosCentros) {
+		for (CustoAtividade custoAtividade : custosAtividade) {
+			String idAtividade = custoAtividade.idAtividade;				
+			for (CustoCentro custoCentro : custosCentros) {
+				if(idAtividade.equals(custoCentro.idAtividade)) {
+					Double valor = custoAtividade.valor * custoCentro.fator / somaDosPesos;
+					custoCentro.setValor(valor);
+					// print(custoCentro.idCentro+","+custoCentro.nomeCentro+","+custoCentro.acronimoCentro+" - "+valor);	
+				}
+			}		
+		}
+	}
+
+	private Double direcionarAtividades(Double somaDosPesos, List<FatorCentro> fatoresCentros, List<Centro> centros,
+			List<CustoCentro> custosCentros) {
+		for (FatorCentro fatorCentro : fatoresCentros) {
+			Double peso = fatorCentro.getFator();
+			for (Centro centro : centros) {
+				if(fatorCentro.getIdCentro().equals(centro.getId())) {
+					print("-----");
+					print("Id Centro: "+centro.getId());
+					print("Id Atividade: "+fatorCentro.getIdAtividade());
+					print("Nome Centro: "+centro.getNome());
+					print("Acrônimo Centro: "+centro.getAcronimo());
+					print("Fator Centro: "+peso);					
+					CustoCentro custoCentro = new CustoCentro(fatorCentro.getIdAtividade(), centro.getId(), 
+							centro.getNome(), centro.getAcronimo(), peso);
+					custosCentros.add(custoCentro);
+				}
+			}
+			somaDosPesos = somaDosPesos + peso;
+		}
+		return somaDosPesos;
+	}
+
+	private Double direcionarCustos(Fato fato, List<FatorAtividade> fatoresAtividades, Double somaDosPesos,
+			List<CustoAtividade> custosAtividade) {
+		for (FatorAtividade fator : fatoresAtividades) {
+			if (fator.getIdVPD().equals(fato.getVpd())) {
+				String idAtividade = fator.getIdAtividade();
+				List<Atividade> atividades = atividadeDao.listar();
+				Double peso = fator.getFator();
+				for (Atividade atividade : atividades) {
+					if (idAtividade.equals(atividade.getId())) {
+						CustoAtividade custoAtividade = new CustoAtividade(atividade.getId(), atividade.getNome(), peso);
+						custosAtividade.add(custoAtividade);
+					}
+				}
+				somaDosPesos = somaDosPesos + peso;
+			}
+		}
+		return somaDosPesos;
 	}
 	
 	private void consolidacaoOrganograma(List<CustoCentro> custosCentros) {
@@ -120,7 +153,8 @@ public class Apropriar extends Console implements Comando {
 		for (Integer key : keySet) {
 			Orgao orgao = mapaOrdenado.get(key);
 			Centro centro = orgao.getCentro();
-			print(centro.getId()+","+centro.getNome()+","+centro.getAcronimo()+" - "+orgao.getCusto());
+			String valorString = formatter.format(orgao.getCusto());
+			print(centro.getId()+","+centro.getNome()+","+centro.getAcronimo()+" - "+valorString);
 		}
 	}
 	private Orgao montandoMapaCentros(Orgao orgao) {
@@ -146,7 +180,8 @@ public class Apropriar extends Console implements Comando {
 		String idCentro = orgao.getCentro().getId();
 		if(idCentro.equals(custoCentro.idCentro)){
 			orgao.setCusto(custoCentro.valor);
-			print("Custo: "+orgao.getCusto());
+			String valorString = formatter.format(custoCentro.valor);
+			print("Custo: "+valorString);
 		} else {
 			List<Orgao> unidades = orgao.getUnidades();
 			for (Orgao suborninado : unidades) {
